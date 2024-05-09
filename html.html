@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to The Trading Website!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#home" class="nav-link">Home</a>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu items for Home -->
+                    <!-- Add dropdown items here if needed -->
+                </ul>
+            </li>
+            <li>
+                <a href="#watchlist" class="nav-link">Watchlist</a>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu items for Watchlist -->
+                    <!-- Add dropdown items here if needed -->
+                </ul>
+            </li>
+            <li>
+                <a href="#financial" class="nav-link">Financial</a>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu items for Financial -->
+                    <!-- Add dropdown items here if needed -->
+                </ul>
+            </li>
+            <li>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu items for Portfolio -->
+                    <!-- Add dropdown items here if needed -->
+                </ul>
+            </li>
+            <li>
+                <a href="#transaction-history" class="nav-link">Transaction History</a>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu items for Transaction History -->
+                    <!-- Add dropdown items here if needed -->
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div class="info-bar">
+            <div>Cash Available: $<span id="cash-available">5857.92</span></div>
+            <div>Amount Invested: $<span id="amount-invested">4142.08</span></div>
+            <div>Portfolio Value: $<span id="portfolio-value">10000.00</span></div>
+            <div>Profit/Loss: $<span id="profit">-100.00</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Home Section -->
+        <section id="home" class="hidden">
+            <h1>Trading Website</h1>
+            <!-- Description Section -->
+            <div class="description">
+                <p>Embark on a seamless investment journey with this Trading Website, your gateway to social trading and multi-asset
+                    investment solutions. Our platform is designed to empower both novice and seasoned investors by
+                    offering real-time market data, personalized portfolio management, and a transparent trading
+                    environment.</p>
+            </div>
+
+            <div class="flex-container">
+                <div class="market-section">
+                    <h2>Stocks</h2>
+                    <div class="flex-scroll" id="stock-list">
+                        <!-- Stocks will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="market-section">
+                    <h2>Commodities</h2>
+                    <div class="flex-scroll" id="commodity-list">
+                        <!-- Commodities will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Watchlist Section -->
+        <section id="watchlist" class="hidden">
+            <h2>Watchlist</h2>
+            <div id="watchlist-items">
+                <ul id="watchlist-stocks">
+                    <!-- Placeholder images for stocks will be dynamically added here -->
+                </ul>
+                <ul id="watchlist-commodities">
+                    <!-- Placeholder images for commodities will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Financial Management Section -->
+        <section id="financial" class="hidden">
+            <h2>Financial Management</h2>
+            <button id="deposit-button">Deposit</button>
+            <button id="withdraw-button">Withdraw</button>
+
+            <!-- Deposit Modal -->
+            <div id="deposit-modal" class="hidden">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Deposit Funds</h3>
+                    <form id="deposit-form">
+                        <label for="name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+
+                        <label for="middle-name">Middle Name:</label>
+                        <input type="text" id="middle-name" name="middle-name">
+
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
+
+                        <label for="deposit-amount">Amount:</label>
+                        <input type="number" id="deposit-amount" name="deposit-amount" min="1" required>
+
+                        <button type="submit">Confirm Deposit</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Withdrawal Form -->
+            <div id="withdrawal-form" class="hidden">
+                <form>
+                    <label for="withdrawal-amount">Enter Amount to Withdraw:</label>
+                    <input type="number" id="withdrawal-amount" min="0" step="0.01">
+                    <button type="submit">Withdraw</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="hidden">
+            <h2>Portfolio</h2>
+            <div>
+                <h3>Investment Distribution</h3>
+                <canvas id="investment-chart" width="400" height="400"></canvas>
+            </div>
+            <!-- Inventory Section now part of Portfolio -->
+            <div id="inventory">
+                <h2>Inventory</h2>
+                <ul id="inventory-items">
+                    <!-- Inventory items will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Transaction History Section -->
+        <section id="transaction-history" class="hidden">
+            <h2>Transaction History</h2>
+            <div id="transaction-list">
+                <!-- Transaction history will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Profit Section -->
+        <section id="profit-section" class="hidden">
+            <h2>Profit/Loss</h2>
+            <ul id="profit-list">
+                <!-- Profit/Loss items will be dynamically added here -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+</body>
+
+</html>

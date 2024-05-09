@@ -1,0 +1,1530 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #555B70, #555B70); 
+    color: #ffffff; 
+    transition: background-color 0.5s ease; 
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #555B70; 
+    z-index: 1100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555B70; 
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #fff; 
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 80px 300px; 
+}
+
+.info-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #555B70;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+.info-bar div {
+    margin-right: 20px;
+}
+
+
+section {
+    padding: 50px;
+    background: linear-gradient(135deg, #555B70, #444); 
+    margin: 20px 0; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease, slideInFromLeft 1s ease; 
+    transition: transform 0.5s ease; 
+}
+
+h1 {
+    font-size: 72px; /* Increase the font size for the title */
+    color: #FFF; /* Ensuring the title stands out */
+    text-align: center; /* Center align the title */
+    padding: 20px; /* Adding some padding for better spacing */
+    animation: slideIn 3s ease-out forwards; /* Animation for title */
+}
+
+.description {
+    font-size: 18px; /* Set a good readable size for description text */
+    color: #CCC; /* Light gray color for subtlety yet readable */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly transparent background */
+    padding: 20px; /* Padding around the text */
+    margin: 20px auto; /* Centering the description block */
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 80%; /* Limiting width for better reading experience */
+    text-align: center; /* Center alignment of text */
+    animation: fadeIn 5s ease-out; /* Fade in animation for smooth appearance */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+button:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+form {
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    color: #ccc; 
+}
+
+select, input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #555; 
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #333; 
+    color: #fff; 
+}
+
+
+canvas {
+    max-width: 100%;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjust to display two columns */
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.grid-container div {
+    background: #2c3e50; /* Optional: Adds background color for distinction */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.dl-input-placeholder:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+#home button, #watchlist button, #buy button {
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#home button:hover, #watchlist button:hover, #buy button:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+#buy-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.buy-pop-up {
+    background: #333; 
+    padding: 30px;
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); 
+}
+
+.buy-pop-up h2 {
+    color: #fff; 
+}
+
+.buy-pop-up button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 1s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.buy-pop-up button:hover {
+    background-color: #f44336; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+section {
+    animation: slideInFromLeft 1s ease, fadeIn 1s ease;
+    transform: translateY(0); 
+}
+
+
+button:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.container:hover {
+    background-color: #1f1f1f; 
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); 
+}
+
+button:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.6); 
+}
+
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #fff; 
+}
+
+
+.info-bar {
+    background-color: #333; 
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.info-bar div {
+    margin-right: 20px;
+    color: #fff; 
+}
+
+
+h1, h2, h3 {
+    color: #fff; 
+    font-weight: 700; 
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.dl-input-placeholder:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.container:hover {
+    background-color: #1f1f1f;
+    transition: background-color 0.3s ease; 
+}
+
+
+button:hover {
+    transform: translateY(-3px) rotate(5deg); 
+}
+
+
+button.secondary {
+    background-color: #ff5722; 
+}
+
+button.secondary:hover {
+    background-color: #f4511e; 
+}
+
+
+h1.gradient-text, h2.gradient-text, h3.gradient-text {
+    background-image: linear-gradient(135deg, #ff6f00, #ffab40); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+
+
+section {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+
+section {
+    animation: slideInFromLeft 1s ease, fadeIn 1s ease, slideInFromBottom 1s ease; 
+    transform: translateY(0); 
+}
+
+
+.dl-input-placeholder {
+    border: 2px solid #555; 
+    background-color: #222; 
+    transition: border-color 0.3s ease, background-color 0.3s ease; 
+}
+
+.dl-input-placeholder:hover {
+    border-color: #777; 
+    background-color: #333; 
+}
+
+button.success {
+    background-color: #00e676; 
+}
+
+button.success:hover {
+    background-color: #00b248; 
+}
+
+button.warning {
+    background-color: #ffca28; 
+}
+
+button.warning:hover {
+    background-color: #cca21f; 
+}
+
+button.error {
+    background-color: #f44336; 
+}
+
+button.error:hover {
+    background-color: #d32f2f; 
+}
+
+
+a {
+    color: #9e9e9e; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+a:hover {
+    color: #757575; 
+}
+
+
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #ff9800; 
+    background-color: #616161; 
+    color: #fff; 
+}
+
+
+.box {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); 
+}
+
+
+.card {
+    background-color: #212121; 
+    border-radius: 8px; 
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+}
+
+
+.section {
+    background-color: #333; 
+    color: #fff; 
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px; 
+}
+
+
+nav {
+    background-image: linear-gradient(to right, #555B70, #555B70); 
+}
+
+nav ul li a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #fff; 
+    transition: width 0.3s ease, left 0.3s ease; 
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+h1.custom-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #9e9e9e; 
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+}
+
+
+h1.custom-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #9e9e9e; 
+    margin: 10px auto;
+    transition: width 0.3s ease; 
+}
+
+h1.custom-heading:hover::after {
+    width: 100px; 
+}
+
+button.secondary {
+    background-color: #212121; 
+    color: #fff; 
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+button.secondary:hover {
+    background-color: #424242; 
+    transform: translateY(-3px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.6); 
+}
+
+
+a.secondary {
+    color: #ff6f00; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.secondary:hover {
+    color: #ffab40; 
+}
+
+
+nav {
+    background-image: linear-gradient(to right, #212121, #111); 
+}
+
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+.box.secondary {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4); 
+}
+
+
+.card.secondary {
+    background-color: #111; 
+    border-radius: 8px; 
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card.secondary:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.5); 
+}
+
+
+.section.secondary {
+    background-color: #111; 
+    color: #fff; 
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+
+.dl-input-placeholder.secondary {
+    border: 2px solid #777; 
+    background-color: #333; 
+    transition: border-color 0.3s ease, background-color 0.3s ease; 
+}
+
+.dl-input-placeholder.secondary:hover {
+    border-color: #999; 
+    background-color: #444; 
+}
+
+
+h1.secondary, h2.secondary, h3.secondary {
+    color: #ff6f00; /
+}
+
+
+h1.secondary::after, h2.secondary::after, h3.secondary::after {
+    background-color: #ff6f00; 
+}
+
+
+.grid-container.secondary {
+    grid-gap: 30px; 
+}
+
+
+h1.gradient-text, h2.gradient-text, h3.gradient-text {
+    background-image: linear-gradient(135deg, #ff6f00, #ffab40); 
+}
+
+h1.gradient-text, h2.gradient-text, h3.gradient-text {
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent; 
+}
+
+
+button.gradient-hover:hover {
+    transform: translateY(-3px) rotate(5deg); 
+}
+#watchlist-stocks li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#watchlist-stocks li img {
+    margin-right: 10px; 
+}
+.item-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.item-image {
+    width: 45px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+button {
+    padding: 5px 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+.item {
+    font-size: 22px; 
+    font-weight: bold; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    display: inline-block; 
+    margin: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+
+.item.green {
+    background-color: rgba(46, 204, 113, 0.3); 
+}
+
+
+.item.red {
+    background-color: rgba(231, 76, 60, 0.3); 
+}
+
+
+.item.green.animate {
+    animation: pulse-green 0.5s ease-in-out alternate; 
+}
+
+
+.item.red.animate {
+    animation: pulse-red 0.5s ease-in-out alternate; 
+}
+
+
+@keyframes pulse-green {
+    from {
+        background-color: rgba(46, 204, 113, 0.3); 
+    }
+    to {
+        background-color: rgba(46, 204, 113, 0.5); 
+    }
+}
+
+@keyframes pulse-red {
+    from {
+        background-color: rgba(231, 76, 60, 0.3); 
+    }
+    to {
+        background-color: rgba(231, 76, 60, 0.5); 
+    }
+}
+/* Styles for watchlist items */
+.item-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 10px; /* Add rounding to the corners */
+    margin-bottom: 10px; /* Add margin between items */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow for lifted effect */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+
+.item-container:hover {
+    transform: translateY(-3px); /* Add a slight lift effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance box-shadow on hover */
+}
+
+.item-image {
+    width: 50px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add margin between image and text */
+}
+/* Additional styles for improved appearance */
+.item-container {
+    background-color: #444; /* Set background color for item container */
+}
+
+.item-image {
+    border-radius: 50%; /* Make the image rounded */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the image */
+}
+
+.item-container:hover .item-image {
+    transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.item-container:hover {
+    background-color: #555; /* Darken the background on hover */
+}
+
+.item {
+    padding: 15px; /* Increase padding for better spacing */
+    font-size: 20px; /* Increase font size for better readability */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+button {
+    font-weight: bold; /* Add bold font weight to buttons */
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.05); /* Add a slight lift and scale effect on hover */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Increase font size of the brand/logo */
+}
+
+.navbar-nav {
+    font-size: 18px; /* Increase font size of navigation links */
+}
+/* Additional styles for enhanced appearance and interactivity */
+
+/* Add a gradient background to the container */
+.container {
+    background-image: linear-gradient(135deg, #555B70, #222);
+}
+
+/* Style the info-bar with a gradient background */
+.info-bar {
+    background-image: linear-gradient(to right, #555, #444);
+}
+
+/* Add a hover effect to the info-bar elements */
+.info-bar div:hover {
+    transform: translateY(-2px);
+}
+
+/* Style the form labels with a subtle shadow */
+label {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a border and shadow to select and input fields */
+select,
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border: 1px solid #777;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the buy button with a gradient background */
+
+/* Add a pulse animation to the buy button on hover */
+.buy-pop-up button:hover {
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Style the card with a gradient background and rounded corners */
+.card {
+    background-image: linear-gradient(to bottom right, #444, #333);
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a hover effect to cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Add a gradient background to section headings */
+
+/* Style the watchlist items with a gradient background and rounded corners */
+#watchlist-stocks li {
+    background-image: linear-gradient(to bottom right, #444, #333);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a hover effect to watchlist items */
+#watchlist-stocks li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+/* Additional styles for enhanced appearance and interactivity */
+
+/* Add a subtle background pattern to the body */
+body {
+    background-image: radial-gradient(circle, #1a1a1a 1%, transparent 1%);
+    background-size: 20px 20px;
+}
+
+/* Style the navigation links with a gradient underline */
+nav ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+
+/* Add a pulsating animation to watchlist items on hover */
+#watchlist-stocks li:hover {
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+/* Additional enhancements for an out-of-this-world experience */
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style the navigation with a space-age look */
+nav {
+    background: linear-gradient(to right, #1a1a1a, #555B70);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+}
+
+
+/* Style the scrollbar with a futuristic design */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #1b1b1a, #5f5952);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+
+
+button {
+
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+
+    transform: translateY(-3px) scale(1.05);
+}
+
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+
+.info-bar div {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.watchlist-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+}
+
+#inventory-items .inventory-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#inventory-items .item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#inventory-items span {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.item-image {
+    width: 50px; /* Set a smaller width */
+    height: 50px; /* Set a smaller height */
+    object-fit: cover; /* Ensure the image fills the container */
+    border-radius: 50%; /* Apply rounded corners for a more modern look */
+    border: 1px solid #ccc; /* Add a thin border */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.item-image:hover {
+    transform: scale(1.1); /* Scale up the image slightly on hover for a zoom effect */
+}
+
+.item-text {
+    flex: 1; /* Allow text to grow and fill remaining space */
+}
+
+.add-to-watchlist {
+    padding: 5px 10px; /* Add padding */
+    font-size: 14px; /* Adjust font size */
+}
+
+.flex-container {
+    animation: SlideIn 5s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.market-section {
+    background: #555B70;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flex-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.item {
+    flex: 0 0 25%; /* Ensures each item takes up exactly 25% of the flex container's width */
+    text-align: center;
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.item:hover {
+    background-color: #3DB5C4;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.currency-conversion {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.currency-conversion select,
+.currency-conversion input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.conversion-rate {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.card-details input,
+.expiry-cvv input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.expiry-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiry-cvv input {
+    width: 48%;
+}
+
+.name-details input {
+    width: calc(33.333% - 10px);
+    margin-right: 10px;
+}
+
+.name-details input:last-child {
+    margin-right: 0;
+}
+
+.note {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#deposit-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #24a19c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#deposit-button:hover {
+    background-color: #218380;
+}
+
+.close-button {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Hide the modal initially */
+.hidden {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #333;
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+.dropdown-menu {
+    position: relative; /* Ensure proper stacking context */
+    z-index: 2; /* Set a higher z-index than the "Welcome to Oris" element */
+}
+
+/* Adjust the size of the table */
+.home-table {
+    width: 80%; /* You can adjust the width as needed */
+}
+
+/* Ensure the table doesn't overlap with the navigation links */
+.home-section {
+    position: relative;
+}
+
+/* Adjust the z-index of the table to make it appear below the dropdown menu */
+.home-table {
+    z-index: 1;
+}
+
+/* Ensure the dropdown menu appears above the table */
+.nav-links {
+    z-index: 2;
+}
+
+/* Ensure the dropdown menu always appears on top */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+.sidebar a {
+    display: block; /* Make the links block-level elements */
+    margin-bottom: 50px; /* Add margin-bottom to create space between links */
+}
+
+/* Add this to styles.css */
+
+/* Deposit Form Styles */
+#deposit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #343434, #1a1a1a); /* Gradient background */
+    padding: 30px; /* Adjusted padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Increased shadow */
+    z-index: 1000;
+    width: 350px; /* Adjusted width */
+    overflow: hidden;
+    cursor: move; /* Allow dragging */
+}
+
+.modal-content {
+    margin: 0 auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff; /* White color for close button */
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 1.6rem; /* Adjusted font size */
+    margin-bottom: 20px; /* Adjusted margin */
+    color: #fff; /* White color for heading */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Decreased margin */
+    color: #ddd; /* Light gray color for labels */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 30px); /* Adjusted width */
+    padding: 12px;
+    margin-bottom: 15px; /* Adjusted margin */
+    border: none;
+    background-color: #292929; /* Darker background color for inputs */
+    color: #fff; /* White color for text */
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Green color for submit button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Adjusted font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+/* Style for deposit and withdraw buttons */
+#deposit-button,
+#withdraw-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #2c3e50;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect for buttons */
+#deposit-button:hover,
+#withdraw-button:hover {
+    background-color: #34495e;
+    border-color: #2c3e50;
+}
+
+/* Active/focus effect for buttons */
+#deposit-button:active,
+#withdraw-button:active,
+#deposit-button:focus,
+#withdraw-button:focus {
+    outline: none;
+    background-color: #34495e;
+    border-color: #2c3e50;
+}
+
+/* Disabled state for buttons */
+#deposit-button:disabled,
+#withdraw-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Add more styles as needed */
+/* Style for deposit modal */
+#deposit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+/* Style for modal content */
+.modal-content {
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Close button style */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+}
+
+.close-button:hover {
+    color: #ccc;
+}
+
+/* Heading style */
+.modal-content h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Form label style */
+.modal-content label {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+/* Form input style */
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* Submit button style */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Add more styles as needed */
+/* Form input style */
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+    width: calc(100% - 20px); /* Adjust input width to account for padding */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333; /* Change font color to ensure visibility */
+    box-sizing: border-box;
+}
